@@ -1,0 +1,119 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Producto</th>
+      </tr>
+    </thead>
+    <tr>
+      <td>{{ nombre }}</td>
+      <td>uppercase</td>
+      <td>{{ nombre | uppercase }}</td>
+    </tr>
+    <tr>
+      <td>{{ nombre }}</td>
+      <td>lowercase</td>
+      <td>{{ nombre | lowercase }}</td>
+    </tr>    
+    <tr>
+      <td>{{ nombre }}</td>
+      <td>slice:3</td>
+      <td>{{ nombre | slice:3 }}</td>
+    </tr>   
+    <tr>
+      <td>{{ nombre }}</td>
+      <td>slice:4:9</td>
+      <td>{{ nombre | slice:4:9 }}</td>
+    </tr>   
+    <tr>
+      <td>{{ arreglo }}</td>
+      <td>slice:4:8</td>
+      <td>{{ arreglo | slice:4:8 }}</td>
+    </tr>
+    <tr>
+      <td>{{ PI }}</td>
+      <td>number</td>
+      <td>{{ PI | number }}</td>
+    </tr>
+    <tr>
+      <td>{{ PI }}</td>
+      <td>number '4.0-0'</td>
+      <td>{{ PI | number: '4.0-0' }}</td>
+    </tr>
+    <tr>
+      <td>{{ PI }}</td>
+      <td>number '1.0-5'</td>
+      <td>{{ PI | number: '1.0-5' }}</td>
+    </tr>
+    <tr>
+      <td>{{ PI*100 }}</td>
+      <td>number '1.0-5'</td>
+      <td>{{ PI*100 | number: '1.0-5' }}</td>
+    </tr>
+    <tr>
+      <td>{{ soyNumero }}</td>
+      <td>percent</td>
+      <td>{{ soyNumero | percent }}</td>
+    </tr>  
+    <tr>
+      <td>{{ soyNumero }}</td>
+      <td>percent:'1.2-4'</td>
+      <td>{{ soyNumero | percent:'1.2-4' }}</td>
+    </tr> 
+    <tr>
+      <td>{{ soyNumero }}</td>
+      <td>percent:'2.2-5'</td>
+      <td>{{ soyNumero | percent:'2.2-5' }}</td>
+    </tr> 
+    <tr>
+      <td>{{ soyNumero }}</td>
+      <td>percent:'4.2-5'</td>
+      <td>{{ soyNumero | percent:'4.2-5' }}</td>
+    </tr> 
+    <tr>
+      <td>{{ salario }}</td>
+      <td>currency</td>
+      <td>{{ salario | currency }}</td>
+    </tr>     
+    <tr>
+      <td>{{ salario }}</td>
+      <td>currency:'COP'</td>
+      <td>{{ salario | currency:'COP' }}</td>
+    </tr>
+    <tr>
+      <td>{{ salario }}</td>
+      <td>currency:'EUR':true</td>
+      <td>{{ salario | currency:'EUR':true }}</td>
+    </tr>
+    <tr>
+      <td>{{ salario }}</td>
+      <td>currency:'EUR':true:'4.0-0'</td>
+      <td>{{ salario | currency:'EUR':true:'4.0-0' }}</td>
+    </tr>   
+    <tr>
+      <td>{{ salario }}</td>
+      <td> $ number:'.2-2'</td>
+      <td>$ {{ salario | number:'.2-2' }}</td>
+    </tr> 
+  </table>
+
+  <h3>Otra característica con Slice:</h3>
+  <ul>
+    <li *ngFor="let cadaVal of arreglo | slice:7:20">{{cadaVal}}</li>
+  </ul>
+
+  <h3>Formato JSON</h3>
+  <hr>
+  <pre>
+    {{ heroe | json}}
+  </pre>
+
+</div>
+
+<router-outlet></router-outlet>
